@@ -10,5 +10,15 @@
     main {
         max-width: 75rem;
         margin: auto;
+        div {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(260px,1fr));
+            section {
+                p {
+                    padding: 10px  0px;
+                }
+            }
+
+        }
    }
 } /* end media query*/  

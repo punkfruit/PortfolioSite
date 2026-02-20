@@ -12,9 +12,9 @@ export const films = [
       "description":"Documentary made for Film Making I"
    },
    {
-      "title":"Short with Friends (FirstAssignment)",
+      "title":"Short with Friends (First Assignment)",
       "youtubeId":"kaC1fsvojUY",
-      "date":"January 2026",
+      "date":"January 2025",
       "description":"Short I directed with my colleagues"
    },
    {

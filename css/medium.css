@@ -36,7 +36,7 @@
     main {
         div {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+            grid-template-columns: repeat(2, minmax(260px,1fr));
             section {
                 p {
                     padding: 10px  0px;
