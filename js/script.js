@@ -75,5 +75,7 @@ function revealSections() {
 
 renderVideos();
 
+console.log("Cohen Commit Test");
+
 
 
