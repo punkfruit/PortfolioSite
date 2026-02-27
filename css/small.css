@@ -1,5 +1,5 @@
 /* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
-html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; min-height: 100vh;}
 body {
     background-color: #1c1c1c;
     color: #efefef;
@@ -12,6 +12,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: #101010 0 2 4 0;
     h1 {
         margin: 0;
         padding: 20px 0 20px 20px;
@@ -25,13 +26,21 @@ header {
         color: #efefef;
         border: none;
         cursor: pointer;
+        img {
+            width: 44px;
+            height: auto;
+        }
     }
 }
 nav {
+    margin: 0;
+    padding: 0;
     opacity: 0;
+    height: 0;
+    display: none;
     visibility: hidden;
-    transform: translateY(-10px);
     height: 0px;
+    box-shadow: #101010 0 2 4 0;
 }
 nav.open {
     height: fit-content;
@@ -40,6 +49,7 @@ nav.open {
     display: block;
     opacity: 1;
     margin: 0;
+    
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
     ul {
         list-style: none;
@@ -77,6 +87,16 @@ h2 {
         font-size: 1.6rem;
     }
 
+/*  MAIN CONTENT STUFF GOES HERE */
+main {
+    min-height: 80vh;
+}
+main.landing {
+    background-image: url("../images/IMG_0399.JPG");
+    background-repeat: no-repeat;
+    background-size: 250%;
+    background-position: center;
+}
 section {
     margin: 2rem 20px;
     display: flex;
@@ -108,19 +128,83 @@ iframe {
     border: none; 
     border-radius: 10px;  
 }
-section.visible {
+.rendered-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.rendered-section.visible {
     opacity: 1;
     transform: translateY(0);
 }
+#photography-viewer {
+    margin: 0px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    div {
+        margin: 0;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid black; 
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+#photography-viewer div img:hover {
+    opacity: 0.5;
+}
+img.heroimg {
+    margin: 0;
+    border-radius: 0;
+}
+
+#lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#lightbox-overlay.hidden {
+  display: none;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/*  FOOTER STUFF GOES HERE */
 
 
 footer {
     background-color: #101010;
     text-align: center;
     padding: 20px 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
-    left: 0;
     width: 100%;
     p {
         margin: 0;
