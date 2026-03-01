@@ -21,6 +21,6 @@ export const films = [
       "title":"Egg Montage",
       "youtubeId":"o5yDhZBedUo",
       "date":"TBD",
-      "description":"Brief description"
+      "description":"Montage of eggs being cooked, directed by me!"
    }
   ] 
