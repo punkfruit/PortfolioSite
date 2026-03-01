@@ -92,11 +92,25 @@ main {
     min-height: 80vh;
 }
 main.landing {
-    background-image: url("../images/heroimg.JPG");
-    background-repeat: no-repeat;
-    background-size: 250%;
-    background-position: center;
+  background-image: url("../images/heroimg.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 55%;
+  min-height: clamp(420px, 70vh, 820px);
 }
+
+#landing-div {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+#landing-div h2 {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
 section {
     margin: 2rem 20px;
     display: flex;

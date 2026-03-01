@@ -46,12 +46,13 @@
     }
   }
   main.landing {
-    background-size: 100%;
-    display: flex;
-    justify-content: center;
-  }
+  background-size: cover;
+  background-position: 50% 55%;
+  min-height: clamp(600px, 70vh, 1000px);
+  align-items: center;
+}
   #landing-div {
-    min-width: 1200px;
+    width: min(90%, 1000px);
     display: block;
     grid-template-columns: none;
   }

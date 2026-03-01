@@ -24,6 +24,10 @@ export const photography = [
       {
          "src":"images/djenkins_LL2.jpg",
          "alt":"Description of image 6"
+      },
+      {
+         "src":"images/djenkins_Land4d.jpg",
+         "alt": "Description of image 7"
       }
    ]
 }
