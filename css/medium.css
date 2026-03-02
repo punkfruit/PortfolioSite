@@ -40,15 +40,14 @@
   }
   main {
     div {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(260px, 1fr));
-      width: fit-content;
-
-      section {
-        p {
-          padding: 10px 0px;
-        }
-      }
+     #films-viewer,
+#edits-viewer,
+#models-viewer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  width: 100%;
+}
+      
     }
   }
   #photography-viewer {
@@ -79,9 +78,20 @@
     margin: none;
   }
 
-  .bio-layout {
-  grid-template-columns: 2fr 1fr; /* text wider than photo */
-  align-items: center;
+  #films-viewer,
+#edits-viewer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.bio-layout {
+  grid-template-columns: 2.2fr 1fr;
+  align-items: start;
+}
+.bio-photo {
+  align-self: start;
 }
 
   li:hover {

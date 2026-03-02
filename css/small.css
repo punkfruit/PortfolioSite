@@ -117,17 +117,17 @@ main.landing {
   font-size: clamp(1rem, 3.5vw, 1.4rem);
 }
 
-#landing-div .email {
+.email {
   color: white;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-#landing-div .email:hover {
+.email:hover {
   color: #7fdfff;
   text-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
 }
 
-#landing-div .email:active {
+.email:active {
   opacity: 0.7;
 }
 
@@ -169,6 +169,29 @@ iframe.sketchfab-frame {
 
   aspect-ratio: 4 / 3;
   height: auto;
+}
+
+main.bio-page {
+  padding: 40px 20px; /* top/bottom, left/right */
+}
+
+.bio-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bio-text {
+  max-width: 700px; /* readable but not narrow */
+}
+
+.bio-photo {
+  align-self: start;
+}
+
+.bio-photo .contact {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 1.1rem;
 }
 
 #photography-viewer {

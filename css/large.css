@@ -15,13 +15,13 @@
     max-width: 75rem;
     margin: auto;
     div {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(260px, 1fr));
-      section {
-        p {
-          padding: 10px 0px;
-        }
-      }
+      #films-viewer,
+#edits-viewer,
+#models-viewer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  width: 100%;
+}
     }
   }
   #photography-viewer {
@@ -51,6 +51,15 @@
   min-height: clamp(600px, 70vh, 1000px);
   align-items: center;
 }
+
+#films-viewer,
+#edits-viewer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
   #landing-div {
     width: min(90%, 1000px);
     display: block;
@@ -64,9 +73,9 @@
 }
 
 .bio-layout {
-  grid-template-columns: 3fr 1.2fr;
-  max-width: 75rem;
+  max-width: 1100px;
   margin: 0 auto;
+  grid-template-columns: 2.5fr 1fr;
 }
 
 } /* end media query*/
