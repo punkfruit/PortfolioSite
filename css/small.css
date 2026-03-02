@@ -314,6 +314,25 @@ footer {
 .wip {
     display: block;
 }
+.social-links {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* makes black SVG white */
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: translateY(-3px);
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(127, 223, 255, 0.7));
+}
+
 /*  apply a natural box layout model to all elements  */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
