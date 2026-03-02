@@ -149,7 +149,7 @@ iframe {
   display: block;
 }
 
-/* Only auto-rendered sections should animate in */
+
 .rendered-section {
   opacity: 0;
   transform: translateY(20px);
