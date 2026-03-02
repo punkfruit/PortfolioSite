@@ -56,4 +56,10 @@
     display: block;
     grid-template-columns: none;
   }
+
+  #models-viewer {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 70%;
+}
 } /* end media query*/

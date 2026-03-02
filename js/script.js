@@ -17,7 +17,7 @@ if (menuToggle && nav) {
     nav.classList.toggle("open");
   });
 
-  nav.querySelectorAll("a").forEach(link => {
+  nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       nav.classList.remove("open");
     });
@@ -54,8 +54,8 @@ function renderVideos(dataArray, container) {
 
 // Render photography
 function renderPhotography(dataArray, container) {
-  dataArray.forEach(item => {
-    item.images.forEach(image => {
+  dataArray.forEach((item) => {
+    item.images.forEach((image) => {
       const img = document.createElement("img");
       const div = document.createElement("div");
 
@@ -70,6 +70,7 @@ function renderPhotography(dataArray, container) {
   });
 }
 
+// Render mixed embeds (YouTube + Sketchfab)
 function renderEmbeds(dataArray, container) {
   dataArray.forEach((item, index) => {
     const section = document.createElement("section");
@@ -86,20 +87,19 @@ function renderEmbeds(dataArray, container) {
 
     if (item.type === "sketchfab") {
       frame.src = `https://sketchfab.com/models/${item.id}/embed`;
-      frame.height = "400";
       frame.allow = "autoplay; fullscreen; xr-spatial-tracking";
+      frame.classList.add("sketchfab-frame");
     } else {
       frame.src = `https://www.youtube.com/embed/${item.id}`;
-      frame.height = "315";
       frame.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      frame.classList.add("youtube-frame");
     }
 
     frame.title = item.title;
     frame.allowFullscreen = true;
     frame.loading = "lazy";
     frame.frameBorder = "0";
-    frame.width = "100%";
 
     section.append(frame, title, date, description);
     container.appendChild(section);
@@ -108,21 +108,19 @@ function renderEmbeds(dataArray, container) {
   });
 }
 
-
-
 // Only render if the container exists on the current page
 if (photographyViewer) renderPhotography(photography, photographyViewer);
 if (editsViewer) renderVideos(edits, editsViewer);
 if (filmsViewer) renderVideos(films, filmsViewer);
 if (modelsViewer) renderEmbeds(models, modelsViewer);
 
-// ✅ Lightbox only if those elements exist
+// Lightbox only if those elements exist
 const overlay = document.getElementById("lightbox-overlay");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.getElementById("lightbox-close");
 
 if (overlay && lightboxImg && closeBtn) {
-  document.querySelectorAll(".gallery-img").forEach(img => {
+  document.querySelectorAll(".gallery-img").forEach((img) => {
     img.addEventListener("click", () => {
       lightboxImg.src = img.src;
       overlay.classList.remove("hidden");
