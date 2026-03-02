@@ -79,6 +79,11 @@
     margin: none;
   }
 
+  .bio-layout {
+  grid-template-columns: 2fr 1fr; /* text wider than photo */
+  align-items: center;
+}
+
   li:hover {
     background-color: #222222;
   }

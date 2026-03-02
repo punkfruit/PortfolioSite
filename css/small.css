@@ -133,55 +133,41 @@ main.landing {
 
 
 
+/* Normal sections should just exist */
 section {
-    margin: 2rem 20px;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    h2 {
-        margin: 0;
-        padding: 20px 0 0 0;
-        font-size: 1.6rem;
-    }
-    h4 {
-        margin: 0;
-        padding: 0;
-        font-size: 1.2rem;
-        text-decoration: none;
-    }
-    p {
-        margin: 0;
-        padding: 40px 0 80px 0;
-        font-size: 1.4rem;
-    }
+  margin: 2rem 20px;
+  display: flex;
+  flex-direction: column;
 }
+
 iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-    border: none; 
-    border-radius: 10px;  
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+  display: block;
 }
+
+/* Only auto-rendered sections should animate in */
 .rendered-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .rendered-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 iframe.sketchfab-frame {
   width: 100%;
-  max-width: 900px;     /* increase to 1100px if you want BIG */
-  margin: 0 auto;       /* centers it */
+  max-width: 900px;
+  margin: 0 auto;
   display: block;
 
-  aspect-ratio: 4 / 3;  /* or 1 / 1 for square */
+  aspect-ratio: 4 / 3;
   height: auto;
 }
 
@@ -210,6 +196,48 @@ iframe.sketchfab-frame {
 img.heroimg {
     margin: 0;
     border-radius: 0;
+}
+
+main.bio-page {
+  padding: 20px;
+}
+
+.bio-layout {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile stack */
+  gap: 20px;
+  align-items: start;
+}
+
+.bio-photo img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+}
+
+.bio-text p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.bio-text .email {
+  color: white;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  display: inline-block;
+}
+
+.bio-text .email:hover {
+  color: #7fdfff;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
+}
+
+.bio-text .email:active {
+  opacity: 0.7;
 }
 
 #lightbox-overlay {
