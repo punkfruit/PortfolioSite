@@ -104,11 +104,31 @@ main.landing {
   padding: 2rem;
   border-radius: 12px;
   backdrop-filter: blur(6px);
+  max-width: 92vw;
+  box-sizing: border-box;
 }
 
 #landing-div h2 {
   color: white;
   text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+#landing-div .contact {
+  font-size: clamp(1rem, 3.5vw, 1.4rem);
+}
+
+#landing-div .email {
+  color: white;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#landing-div .email:hover {
+  color: #7fdfff;
+  text-shadow: 0 0 8px rgba(0, 191, 255, 0.7);
+}
+
+#landing-div .email:active {
+  opacity: 0.7;
 }
 
 section {
