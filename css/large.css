@@ -85,7 +85,7 @@
   /* ----- BLOG / POSTS PAGE ----- */
   .post-images {
     display: grid;
-    grid-template-columns: repeat(4, minmax(170px, 1fr));
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
     gap: 12px;
   }
 }
