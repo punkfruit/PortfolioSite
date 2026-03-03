@@ -28,6 +28,58 @@ export const photography = [
       {
          "src":"images/djenkins_Land4d.jpg",
          "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/snes.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/stump.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/ships.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/random.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/dragon.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/friendchar.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/gamesketch.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/MoonScene2.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/rover.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/boots.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/iphone.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/fence.jpg",
+         "alt": "Description of image 7"
+      },
+      {
+         "src":"images/art/WII.gif",
+         "alt": "Description of image 7"
       }
    ]
 }
