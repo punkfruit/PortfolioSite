@@ -2,6 +2,10 @@ export const photography = [
     {
    "images":[
       {
+         "src":"images/art/light.jpg",
+         "alt": "Description of image 7"
+      },
+      {
          "src":"images/djenkins_lab5b.jpg",
          "alt":"Image 1"
       },
@@ -30,7 +34,7 @@ export const photography = [
          "alt": "Description of image 7"
       },
       {
-         "src":"images/art/snes.jpg",
+         "src":"images/art/snes.gif",
          "alt": "Description of image 7"
       },
       {
@@ -70,7 +74,7 @@ export const photography = [
          "alt": "Description of image 7"
       },
       {
-         "src":"images/art/iphone.jpg",
+         "src":"images/art/iphone.gif",
          "alt": "Description of image 7"
       },
       {
