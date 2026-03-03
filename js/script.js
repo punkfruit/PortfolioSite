@@ -38,6 +38,7 @@ function renderVideos(dataArray, container) {
     section.classList.add("rendered-section");
 
     title.textContent = item.title;
+    title.classList.add("title-header");
     date.textContent = item.date;
     description.textContent = item.description;
 
@@ -84,6 +85,7 @@ function renderEmbeds(dataArray, container) {
     section.classList.add("rendered-section");
 
     title.textContent = item.title;
+    title.classList.add("title-header");
     date.textContent = item.date ?? "";
     description.textContent = item.description ?? "";
 

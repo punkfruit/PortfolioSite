@@ -86,10 +86,9 @@ h2 {
         padding: 20px 0 20px 20px;
         font-size: 1.6rem;
     }
-h2.bio {
+h2.bio, .title-header {
   padding: 20px 20px 20px 0px;
 }
-
 /*  MAIN CONTENT STUFF GOES HERE */
 main {
     min-height: 80vh;
@@ -271,12 +270,18 @@ main.bio-page {
 .bio-text .email:active {
   opacity: 0.7;
 }
-
-.inline-link {
+div.blog-link {
+  display: flex;
+  justify-content: center;
+}
+a.inline-link {
   text-align: center;
   font-size: 1.75rem;
 }
-
+a.inline-link:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(127, 223, 255, 0.7));
+  transition: 0.3s  ;
+}
 /* BLOG LAYOUT*/
 #postViewer {
   display: grid;
