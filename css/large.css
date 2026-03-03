@@ -15,9 +15,7 @@
     max-width: 75rem;
     margin: auto;
     div {
-      #films-viewer,
-#edits-viewer,
-#models-viewer {
+      #films-viewer, #edits-viewer, #models-viewer {
   display: grid;
   grid-template-columns: repeat(3, minmax(260px, 1fr));
   width: 100%;
@@ -50,6 +48,8 @@
   background-position: 50% 55%;
   min-height: clamp(600px, 70vh, 1000px);
   align-items: center;
+  /*min-height: 74.5vh;  fits snuggly on page*/
+  min-height: 100vh; /*Makes the picture very large, allows for scrolling on the homepage*/
 }
 
 #films-viewer,
@@ -73,9 +73,13 @@
 }
 
 .bio-layout {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   grid-template-columns: 2.5fr 1fr;
+}
+section.bio-layout {
+  margin: 0;
+
 }
 
 } /* end media query*/

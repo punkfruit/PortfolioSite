@@ -86,11 +86,16 @@ h2 {
         padding: 20px 0 20px 20px;
         font-size: 1.6rem;
     }
+h2.bio {
+  padding: 20px 20px 20px 0px;
+}
 
 /*  MAIN CONTENT STUFF GOES HERE */
 main {
     min-height: 80vh;
 }
+
+/* To change Hero Image, change "background-img: url("../images/heroimg.JPG")"*/
 main.landing {
   background-image: url("../images/heroimg.JPG");
   background-repeat: no-repeat;
@@ -102,7 +107,8 @@ main.landing {
 #landing-div {
   background: rgba(0, 0, 0, 0.4);
   padding: 2rem;
-  border-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
   backdrop-filter: blur(6px);
   max-width: 92vw;
   box-sizing: border-box;
@@ -176,7 +182,7 @@ main.bio-page {
 }
 
 .bio-layout {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -215,11 +221,14 @@ main.bio-page {
 }
 #photography-viewer div img:hover {
     opacity: 0.5;
+    transition: 0.3s;
 }
 img.heroimg {
     margin: 0;
     border-radius: 0;
 }
+
+/* BIO PAGE LAYOUT */
 
 main.bio-page {
   padding: 20px;
@@ -262,6 +271,61 @@ main.bio-page {
 .bio-text .email:active {
   opacity: 0.7;
 }
+
+.inline-link {
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+/* BLOG LAYOUT*/
+#postViewer {
+  display: grid;
+}
+div.post-text h2{
+  padding: 20px 0px
+}
+div.post-images figure {
+  margin: 0;
+  width: 100%;
+  height:300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  :hover {
+    opacity: 0.5;
+    transition: 0.3s;
+  }
+  figcaption {
+    text-align: center;
+    padding: 5px;
+    font-size: 1rem;
+  }
+}
+img.post-image {
+  width: 100%;
+  height: 100%;
+  max-height: 270px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid black;
+}
+
+div.post-text ul {
+  display: flex;
+  gap: 10px;
+  li {
+    padding: 8px;
+    border-radius: 20px;
+    border: 11px #ce4242;
+    background-color: #efefef;
+    color: #4e4e4e;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+/* LIGHT BOX & IMAGE OVERLAY*/
 
 #lightbox-overlay {
   position: fixed;

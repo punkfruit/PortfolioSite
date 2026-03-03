@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daniel Jenkins</title>
+
+    <!-- Favicon  -->
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Links to CSS  -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/small.css" />
+    <link rel="stylesheet" href="css/medium.css" />
+    <link rel="stylesheet" href="css/large.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><h1>Daniel's Portfolio</h1></a>
+      <button id="menu-toggle" class="closed">
+        <img
+          src="images/navmenu.svg"
+          alt="Menu Toggle"
+          width="44"
+          height="44"
+        />
+      </button>
+    </header>
+    <nav>
+      
+      <ul>
+        <li>
+          <a href="films.html"><h2>Films</h2></a>
+        </li>
+        <li>
+          <a href="edits.html"><h2>Edits</h2></a>
+        </li>
+        <li>
+          <a href="photography.html"><h2>Photography</h2></a>
+        </li>
+        <li>
+          <a href="3Dmodels.html"><h2>3D Models</h2></a>
+        </li>
+        <li>
+          <a href="bio.html"><h2>About</h2></a>
+        </li>
+      </ul>
+    </nav>
+    <main  class="">
+        <div id="postViewer"></div>
+        <div id="lightbox-overlay" class="hidden">
+        <span id="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="">
+    </main>
+    <footer>
+  <p>
+    Copyright &copy;
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    Daniel Jenkins
+  </p>
+
+  <div class="social-links">
+    <a href="https://github.com/punkfruit" target="_blank" aria-label="GitHub">
+      <img src="images/github.svg" alt="GitHub" />
+    </a>
+
+    <a href="https://www.instagram.com/punkfruitart/" target="_blank" aria-label="Instagram">
+      <img src="images/instagram.svg" alt="Instagram" />
+    </a>
+
+    <a href="https://www.youtube.com/@realpunkfruit" target="_blank" aria-label="Youtube">
+      <img src="images/youtube.svg" alt="Youtube" />
+    </a>
+
+    <a href="https://steamcommunity.com/id/punkfruit/myworkshopfiles/" target="_blank" aria-label="Steam Workshop">
+      <img src="images/steam.svg" alt="Steam Workshop" />
+    </a>
+  </div>
+</footer>
+
+    <!-- Links to JS  -->
+    <script src="js/script.js" type="module"></script>
+  </body>
+</html>
