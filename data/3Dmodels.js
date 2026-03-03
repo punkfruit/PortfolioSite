@@ -7,11 +7,11 @@ export const models = [
     description: "Scene of a game room I made for my class final!"
   },
    {
-    title: "Extra Credit",
+    title: "Lego Guy",
     type: "youtube",
-    id: "corOI9HU39Y",
-    date: "February 2026",
-    description: "Group Chemistry assignment i directed"
+    id: "0u2eVYmi1ac",
+    date: "November 2023",
+    description: "Lego mini figure made in blender"
   },
   {
     title: "Desk Chair",
