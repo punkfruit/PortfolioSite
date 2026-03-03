@@ -2,11 +2,13 @@
   html {
     max-height: 100vh;
   }
+
   header,
   nav,
   main {
     width: 100%;
   }
+
   body {
     margin: auto;
   }
@@ -14,72 +16,76 @@
   main {
     max-width: 75rem;
     margin: auto;
-    div {
-      #films-viewer, #edits-viewer, #models-viewer {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(260px, 1fr));
-  width: 100%;
-}
-    }
   }
-  #photography-viewer {
-    margin: 0px 20px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(260px, 1fr));
-    max-width: 100%;
-    div {
-      display: block;
-      grid-template-columns: none;
-      margin: 0;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      border: 1px solid black;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
-  }
-  main.landing {
-  background-size: cover;
-  background-position: 50% 55%;
-  min-height: clamp(600px, 70vh, 1000px);
-  align-items: center;
-  /*min-height: 74.5vh;  fits snuggly on page*/
-  min-height: 100vh; /*Makes the picture very large, allows for scrolling on the homepage*/
-}
 
-#films-viewer,
-#edits-viewer {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(260px, 1fr));
-  gap: 20px;
-  width: 100%;
-}
+  /* ----- LANDING HERO ----- */
+  main.landing {
+    background-size: cover;
+    background-position: 50% 55%;
+    min-height: 100vh; /* big hero */
+    align-items: center;
+  }
 
   #landing-div {
     width: min(90%, 1000px);
-    display: block;
-    grid-template-columns: none;
   }
 
+  /* ----- FILMS / EDITS GRID (VIDEOS) ----- */
+  #films-viewer,
+  #edits-viewer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* ----- PHOTOGRAPHY GRID ----- */
+  #photography-viewer {
+    margin: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    max-width: 100%;
+  }
+
+  #photography-viewer div {
+    margin: 0;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid black;
+  }
+
+  #photography-viewer div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ----- MODELS VIEWER ----- */
+  /* If you want models page to be one big embed per row: */
   #models-viewer {
-  display: grid;
-  grid-template-columns: 1fr;
-  width: 70%;
-}
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 70%;
+    margin: 0 auto;
+  }
 
-.bio-layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-template-columns: 2.5fr 1fr;
-}
-section.bio-layout {
-  margin: 0;
+  /* ----- BIO PAGE (slightly wider text on large screens) ----- */
+  .bio-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: 2.5fr 1fr;
+  }
 
-}
+  section.bio-layout {
+    margin: 0; /* prevents extra top margin */
+  }
 
-} /* end media query*/
+  /* ----- BLOG / POSTS PAGE ----- */
+  .post-images {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(170px, 1fr));
+    gap: 12px;
+  }
+}

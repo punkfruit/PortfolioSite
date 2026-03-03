@@ -131,7 +131,7 @@ function renderPosts(dataArray, container) {
 
     title.textContent = item.title;
     date.textContent = item.date;
-    postText.textContent = item.postText;
+    postText.innerHTML = item.postText;
 
     textDiv.append(title, date, postText);
 
