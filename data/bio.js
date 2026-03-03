@@ -22,6 +22,31 @@ export const post = [
       }
     ],
 
-    tags: ["design", "javascript"]
+    tags: ["Film", "Experience"]
+  },
+  {
+    title: "Current Game Project",
+    date: "2026-03-01",
+    postText: "My current project titled 'Adventure Quest' being made on unity! It's a simple zelda clone, but with a unique art style that I love. Haven't had much time to work on it due to school but I'm hopeful it will be done soon!",
+
+    images: [
+      {
+        src: "/images/aqs1.jpg",
+        alt: "alt-text",
+        caption: "Scene Viewer"
+      },
+      {
+        src: "/images/aqs2.jpg",
+        alt: "alt-text",
+        caption: "Snippet of code for the dungeon scene"
+      },
+      {
+        src: "/images/aqs3.jpg",
+        alt: "alt-text",
+        caption: "Attack animation frame"
+      }
+    ],
+
+    tags: ["design", "Gamedev"]
   }
 ];

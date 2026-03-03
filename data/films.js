@@ -1,5 +1,11 @@
 export const films = [
    {
+      "title":"Siren Song BTS",
+      "youtubeId":"vsBQ0SkUxsY",
+      "date":"February 2026",
+      "description":"Behind the scenes for the student production we made as a class! I was in charge of recording, and edited it together in Final Cut"
+   },
+   {
       "title":"Extra Credit",
       "youtubeId":"corOI9HU39Y",
       "date":"February 2026",
@@ -20,7 +26,7 @@ export const films = [
    {
       "title":"Egg Montage",
       "youtubeId":"o5yDhZBedUo",
-      "date":"TBD",
+      "date":"March 2025",
       "description":"Montage of eggs being cooked, directed by me!"
    }
   ] 
