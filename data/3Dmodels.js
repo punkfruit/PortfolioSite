@@ -26,5 +26,12 @@ export const models = [
     id: "6456f540ce574a13ac19c27cc821b9dd",
     date: "November 2024",
     description: "Boat at a dock, modeled in Maya"
+  },
+  {
+    title: "Sandal",
+    type: "youtube",
+    id: "FjEgRUiutM8",
+    date: "December 2023",
+    description: "Sandal I made in Blender for my final"
   }
 ];

@@ -415,6 +415,16 @@ footer {
   filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(127, 223, 255, 0.7));
 }
 
+.post-text a {
+  color: #7fdfff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.post-text a:hover {
+  text-shadow: 0 0 8px rgba(127, 223, 255, 0.7);
+}
+
 
 
 /*  apply a natural box layout model to all elements  */

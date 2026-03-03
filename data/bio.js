@@ -48,5 +48,23 @@ export const post = [
     ],
 
     tags: ["design", "Gamedev"]
+  },
+  {
+    title: "Published Game Dev",
+    date: "2021-12-20",
+    postText: `I self published my first game project on Steam, the largest distributor for video games, and have sold 600 units so far! 
+<a href="https://store.steampowered.com/app/1835220/ILLUMINAUGHTY___Remastered/" target="_blank" rel="noopener noreferrer">
+View it on Steam →
+</a>`,
+
+    images: [
+      {
+        src: "images/inr1.jpg",
+        alt: "alt-text",
+        caption: "Steam Store Page"
+      }
+    ],
+
+    tags: ["design", "Gamedev"]
   }
 ];
