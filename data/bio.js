@@ -6,17 +6,17 @@ export const post = [
 
     images: [
       {
-        src: "/images/chosen1.jpg",
+        src: "images/chosen1.jpg",
         alt: "alt-text",
         caption: "On set"
       },
       {
-        src: "/images/chosen2.jpg",
+        src: "images/chosen2.jpg",
         alt: "alt-text",
         caption: "Us taking a photo with Dallas"
       },
       {
-        src: "/images/chosen3.jpg",
+        src: "images/chosen3.jpg",
         alt: "alt-text",
         caption: "Family on set!"
       }
@@ -31,17 +31,17 @@ export const post = [
 
     images: [
       {
-        src: "/images/aqs1.jpg",
+        src: "images/aqs1.jpg",
         alt: "alt-text",
         caption: "Scene Viewer"
       },
       {
-        src: "/images/aqs2.jpg",
+        src: "images/aqs2.jpg",
         alt: "alt-text",
         caption: "Snippet of code for the dungeon scene"
       },
       {
-        src: "/images/aqs3.jpg",
+        src: "images/aqs3.jpg",
         alt: "alt-text",
         caption: "Attack animation frame"
       }
