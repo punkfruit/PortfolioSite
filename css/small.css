@@ -58,7 +58,7 @@ nav.open {
         background-color: #141414;
         li {
             margin: 0;
-            padding: 10px 0 10px 20px;
+            padding: 10px 20px;
             font-size: 1.2rem;
             a {
                 color: #efefef;
@@ -143,6 +143,10 @@ section {
   margin: 2rem 20px;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 2, 4, 0.5 white;
+  padding: 5px 10px;
+  background-color: #141414;
 }
 
 iframe {
@@ -153,7 +157,9 @@ iframe {
   border-radius: 10px;
   display: block;
 }
-
+iframe:hover {
+  box-shadow: 0 0 6px rgba(127, 223, 255, 0.7);
+}
 
 .rendered-section {
   opacity: 0;
@@ -165,8 +171,6 @@ iframe {
   opacity: 1;
   transform: translateY(0);
 }
-
-
 
 iframe.sketchfab-frame {
   width: 100%;
@@ -221,8 +225,9 @@ main.bio-page {
     }
 }
 #photography-viewer div img:hover {
-    opacity: 0.5;
     transition: 0.3s;
+    opacity: 0.5;
+    cursor: pointer;
 }
 img.heroimg {
     margin: 0;
