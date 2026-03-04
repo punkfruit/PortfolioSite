@@ -311,7 +311,8 @@ div.post-text h2{
 div.post-images figure {
   margin: 0;
   width: 100%;
-  height:320px;
+  min-height:320px;
+  height: auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;

@@ -151,7 +151,7 @@ function renderPosts(dataArray, container) {
     photoDiv.classList.add("post-images");
     
 
-    (item.images || []).slice(0, 3).forEach(({ src, alt, caption }) => {
+    (item.images || []).slice(0, 9999).forEach(({ src, alt, caption }) => {
       const figure = document.createElement("figure");
       const img = document.createElement("img");
       const figcaption = document.createElement("figcaption");
