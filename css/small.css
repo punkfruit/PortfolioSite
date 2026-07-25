@@ -334,6 +334,7 @@ img.post-image {
   object-fit: cover;
   object-position: center;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 div.post-text ul {
