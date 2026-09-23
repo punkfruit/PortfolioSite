@@ -437,7 +437,323 @@ footer {
   text-shadow: 0 0 8px rgba(127, 223, 255, 0.7);
 }
 
+/* =========================
+   WRITING PORTFOLIO
+   ========================= */
 
+.writing-page {
+  padding: 20px;
+}
+
+
+/* Writer bio */
+
+.writer-bio {
+  max-width: 1100px;
+  margin: 2rem auto 3rem auto;
+  padding: 25px 35px;
+}
+
+.writer-bio h2 {
+  padding: 0 0 15px 0;
+}
+
+.writer-bio p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+
+/* Writing samples heading */
+
+.writing-heading {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+
+/* PDF grid */
+
+#writing-viewer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+}
+
+
+/* Individual writing sample */
+
+.writing-card-header {
+  padding: 18px 20px 15px 20px;
+  background: #141414;
+}
+
+.writing-card-header h2 {
+  margin: 0;
+  padding: 0;
+
+  font-size: 1.25rem;
+  color: #7fdfff;
+}
+
+.writing-card-header p {
+  margin: 5px 0 0 0;
+
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.writing-preview-area {
+  position: relative;
+  overflow: hidden;
+}
+
+.writing-card {
+  position: relative;
+  overflow: hidden;
+
+  background: #141414;
+  border-radius: 12px;
+  border: 1px solid rgba(127, 223, 255, 0.2);
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    box-shadow 0.3s ease;
+}
+
+.writing-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.writing-card:hover {
+  box-shadow: 0 0 18px rgba(127, 223, 255, 0.35);
+}
+
+
+/* PDF page preview */
+
+canvas.pdf-preview {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  background: white;
+
+  pointer-events: none;
+}
+
+
+/* Hover information */
+
+.writing-info {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(10, 10, 10, 0.92);
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
+}
+
+.writing-card:hover .writing-info {
+  opacity: 1;
+}
+
+.writing-info h2 {
+  padding: 0;
+  margin: 0 0 8px 0;
+
+  color: #7fdfff;
+}
+
+.writing-type {
+  margin: 0 0 20px 0;
+
+  font-weight: bold;
+  opacity: 0.75;
+}
+
+.writing-logline {
+  line-height: 1.5;
+}
+
+.read-text {
+  margin-top: 15px;
+
+  font-weight: bold;
+  color: #7fdfff;
+}
+
+
+/* Clickable invisible layer */
+
+.pdf-click-area {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  z-index: 3;
+}
+
+
+/* Open PDF button */
+
+.pdf-link {
+  display: block;
+
+  padding: 15px;
+
+  text-align: center;
+
+  color: white;
+  background: #101010;
+
+  border-top: 1px solid rgba(127, 223, 255, 0.25);
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.pdf-link:hover {
+  color: #7fdfff;
+
+  background: #181818;
+
+  text-shadow: 0 0 8px rgba(127, 223, 255, 0.7);
+}
+
+
+/* =========================
+   FULLSCREEN PDF READER
+   ========================= */
+
+#pdf-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 60px 20px 20px 20px;
+
+  background: rgba(0, 0, 0, 0.92);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+#pdf-overlay.hidden {
+  display: none;
+}
+
+
+/* Override global iframe styling */
+
+iframe#pdf-reader {
+  width: min(100%, 1000px);
+  height: 100%;
+
+  aspect-ratio: auto;
+
+  border: none;
+  border-radius: 8px;
+
+  background: white;
+}
+
+
+/* Close X */
+
+#pdf-close {
+  position: absolute;
+
+  top: 15px;
+  right: 25px;
+
+  border: none;
+  background: none;
+
+  color: white;
+
+  font-size: 2.5rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 2001;
+}
+
+#pdf-close:hover {
+  color: #7fdfff;
+
+  text-shadow: 0 0 8px rgba(127, 223, 255, 0.7);
+}
+
+
+/* Prevent page behind PDF from scrolling */
+
+body.pdf-open {
+  overflow: hidden;
+}
+
+
+/* Phones/tablets don't really have hover.
+   Keep the information visible underneath instead. */
+
+@media (hover: none) {
+
+  .writing-info {
+    position: static;
+
+    opacity: 1;
+
+    background: #141414;
+
+    padding: 20px;
+
+    pointer-events: auto;
+  }
+
+  .pdf-click-area {
+    inset: 0;
+
+    bottom: 200px;
+  }
+
+}
 
 /*  apply a natural box layout model to all elements  */
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }

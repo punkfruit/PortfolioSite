@@ -3,12 +3,20 @@ import { edits } from "../data/edits.js";
 import { photography } from "../data/photography.js";
 import { models } from "../data/3Dmodels.js";
 import { post } from "../data/bio.js";
+import { writing } from "../data/writing.js";
+
+import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/6.3.289/pdf.min.mjs";
+
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/6.3.289/pdf.worker.min.mjs";
+
 
 const filmsViewer = document.getElementById("films-viewer");
 const editsViewer = document.getElementById("edits-viewer");
 const photographyViewer = document.getElementById("photography-viewer");
 const modelsViewer = document.getElementById("models-viewer");
 const postViewer = document.getElementById("postViewer");
+const writingViewer = document.getElementById("writing-viewer");
 
 // Mobile menu toggle
 const menuToggle = document.getElementById("menu-toggle");
@@ -175,12 +183,187 @@ function renderPosts(dataArray, container) {
   });
 }
 
+
+// Render writing samples
+
+function renderWriting(dataArray, container) {
+
+  dataArray.forEach((item, index) => {
+
+    const article = document.createElement("article");
+    article.classList.add("writing-card");
+
+    const cardHeader = document.createElement("div");
+cardHeader.classList.add("writing-card-header");
+
+const previewArea = document.createElement("div");
+previewArea.classList.add("writing-preview-area");
+
+const cardTitle = document.createElement("h2");
+cardTitle.textContent = item.title;
+
+const cardType = document.createElement("p");
+cardType.textContent = item.type;
+
+cardHeader.append(cardTitle, cardType);
+
+
+    // ===== PDF PREVIEW =====
+
+    const preview = document.createElement("canvas");
+    preview.classList.add("pdf-preview");
+    preview.setAttribute("aria-label", `${item.title} preview`);
+
+
+    // Render selected PDF page onto canvas
+
+    async function renderPDFPreview() {
+
+      try {
+
+        const loadingTask = pdfjsLib.getDocument({
+  url: item.pdf
+});
+        const pdf = await loadingTask.promise;
+
+        const pageNumber = item.previewPage ?? 1;
+        const page = await pdf.getPage(pageNumber);
+
+        // Higher scale = sharper preview
+        const viewport = page.getViewport({ scale: 1.5 });
+
+        const context = preview.getContext("2d");
+
+        preview.width = viewport.width;
+        preview.height = viewport.height;
+
+        await page.render({
+          canvasContext: context,
+          viewport: viewport
+        }).promise;
+
+      } catch (error) {
+
+        console.error(
+          `Could not render preview for ${item.title}:`,
+          error
+        );
+
+      }
+
+    }
+
+    renderPDFPreview();
+
+
+    // ===== CLICK AREA =====
+
+    const clickArea = document.createElement("button");
+
+    clickArea.classList.add("pdf-click-area");
+
+    clickArea.setAttribute(
+      "aria-label",
+      `Read ${item.title}`
+    );
+
+
+    // ===== HOVER INFORMATION =====
+
+    const info = document.createElement("div");
+    info.classList.add("writing-info");
+
+    const title = document.createElement("h2");
+    title.textContent = item.title;
+
+    const type = document.createElement("p");
+    type.classList.add("writing-type");
+    type.textContent = item.type;
+
+    const logline = document.createElement("p");
+    logline.classList.add("writing-logline");
+    logline.textContent = item.logline;
+
+    const readText = document.createElement("span");
+    readText.classList.add("read-text");
+    readText.textContent = "Click to Read";
+
+
+    // ===== DIRECT PDF LINK =====
+
+    const openPDF = document.createElement("a");
+
+    openPDF.href = item.pdf;
+    openPDF.target = "_blank";
+    openPDF.rel = "noopener noreferrer";
+
+    openPDF.classList.add("pdf-link");
+
+    openPDF.textContent = "Open PDF ↗";
+
+
+    // ===== ASSEMBLE =====
+
+    info.append(
+      title,
+      type,
+      logline,
+      readText
+    );
+
+    previewArea.append(
+  preview,
+  info,
+  clickArea
+);
+
+article.append(
+  cardHeader,
+  previewArea,
+  openPDF
+);
+
+    container.appendChild(article);
+
+
+    // ===== OPEN FULLSCREEN READER =====
+
+    clickArea.addEventListener("click", () => {
+
+      const pdfOverlay =
+        document.getElementById("pdf-overlay");
+
+      const pdfReader =
+        document.getElementById("pdf-reader");
+
+      pdfReader.src = item.pdf;
+
+      pdfOverlay.classList.remove("hidden");
+
+      document.body.classList.add("pdf-open");
+
+    });
+
+
+    // ===== FADE IN =====
+
+    setTimeout(() => {
+
+      article.classList.add("visible");
+
+    }, index * 150);
+
+  });
+
+}
+
 // Only render if the container exists on the current page
 if (photographyViewer) renderPhotography(photography, photographyViewer);
 if (editsViewer) renderVideos(edits, editsViewer);
 if (filmsViewer) renderVideos(films, filmsViewer);
 if (modelsViewer) renderEmbeds(models, modelsViewer);
 if (postViewer) renderPosts(post, postViewer);
+if (writingViewer) renderWriting(writing, writingViewer);
 
 // Lightbox only if those elements exist
 const overlay = document.getElementById("lightbox-overlay");
@@ -202,6 +385,39 @@ if (overlay && lightboxImg && closeBtn) {
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) overlay.classList.add("hidden");
   });
+}
+
+// PDF viewer
+
+const pdfOverlay = document.getElementById("pdf-overlay");
+const pdfReader = document.getElementById("pdf-reader");
+const pdfClose = document.getElementById("pdf-close");
+
+if (pdfOverlay && pdfReader && pdfClose) {
+
+  function closePDF() {
+    pdfOverlay.classList.add("hidden");
+
+    // Stops the PDF after closing it
+    pdfReader.src = "";
+
+    document.body.classList.remove("pdf-open");
+  }
+
+  pdfClose.addEventListener("click", closePDF);
+
+  pdfOverlay.addEventListener("click", (e) => {
+    if (e.target === pdfOverlay) {
+      closePDF();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !pdfOverlay.classList.contains("hidden")) {
+      closePDF();
+    }
+  });
+
 }
 
 console.log("Script loaded successfully");

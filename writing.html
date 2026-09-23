@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Daniel Jenkins — Writing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/small.css" />
+  <link rel="stylesheet" href="css/medium.css" />
+  <link rel="stylesheet" href="css/large.css" />
+</head>
+
+<body>
+
+<header>
+  <a href="index.html">
+    <h1>Daniel's Portfolio</h1>
+  </a>
+
+  <button id="menu-toggle" class="closed">
+    <img
+      src="images/navmenu.svg"
+      alt="Menu Toggle"
+      width="44"
+      height="44"
+    />
+  </button>
+</header>
+
+<nav>
+  <ul>
+    <li>
+      <a href="films.html"><h2>Films</h2></a>
+    </li>
+
+    <li>
+      <a href="edits.html"><h2>Edits</h2></a>
+    </li>
+
+    <li>
+      <a href="photography.html"><h2>Photography/Art</h2></a>
+    </li>
+
+    <li>
+      <a href="3Dmodels.html"><h2>3D Models</h2></a>
+    </li>
+
+    <li>
+      <a href="writing.html"><h2>Writing</h2></a>
+    </li>
+
+    <li>
+      <a href="bio.html"><h2>About</h2></a>
+    </li>
+  </ul>
+</nav>
+
+
+<main class="writing-page">
+
+  <!-- WRITER BIO -->
+  <section class="writer-bio">
+
+    <h2>Writer Bio</h2>
+
+    <p>
+      Daniel Jenkins is a screenwriter drawn to engaging, high-energy
+      action/adventure stories with a sense of wonder. His work often centers
+      on friendship, understanding, and redemption, usually following roguish
+      protagonists who get themselves into situations way bigger than they
+      expected.
+    </p>
+
+    <p>
+      He is currently developing <em>The Time Traveler's Journal</em>, a
+      time-travel heist about a treasure hunter attempting to steal the Amber
+      Room before it disappears from history.
+    </p>
+
+    <p>
+      Outside of writing, Daniel is a film student and game developer who also
+      fixes and sells old ThinkPads on the side.
+    </p>
+
+  </section>
+
+
+  <h2 class="writing-heading">Writing Samples</h2>
+
+  <!-- JS puts the PDF cards here -->
+  <div id="writing-viewer"></div>
+
+</main>
+
+
+<!-- FULL SCREEN PDF VIEWER -->
+<div id="pdf-overlay" class="hidden">
+
+  <button id="pdf-close" aria-label="Close PDF">&times;</button>
+
+  <iframe
+    id="pdf-reader"
+    title="PDF Reader">
+  </iframe>
+
+</div>
+
+
+<footer>
+
+  <p>
+    Copyright &copy;
+    <script>
+      document.write(new Date().getFullYear());
+    </script>
+    Daniel Jenkins
+  </p>
+
+  <div class="social-links">
+
+    <a
+      href="https://github.com/punkfruit"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub">
+      <img src="images/github.svg" alt="GitHub" />
+    </a>
+
+    <a
+      href="https://www.instagram.com/punkfruitart/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram">
+      <img src="images/instagram.svg" alt="Instagram" />
+    </a>
+
+    <a
+      href="https://www.youtube.com/@realpunkfruit"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="YouTube">
+      <img src="images/youtube.svg" alt="YouTube" />
+    </a>
+
+    <a
+      href="https://steamcommunity.com/id/punkfruit/myworkshopfiles/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Steam Workshop">
+      <img src="images/steam.svg" alt="Steam Workshop" />
+    </a>
+
+  </div>
+
+</footer>
+
+
+<script src="js/script.js" type="module"></script>
+
+</body>
+</html>
