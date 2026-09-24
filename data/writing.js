@@ -7,10 +7,10 @@ export const writing = [
     previewPage: 2
   },
   {
-  title: "The Last Transmission",
+  title: "61.6",
   type: "Short Screenplay",
-  logline: "Your logline here.",
-  pdf: "pdfs/last-transmission.pdf",
-  previewPage: 1
+  logline: "An urban explorer livestreams from an abandoned 1990s radio station, unaware that her skyrocketing viewer count comes at a price",
+  pdf: "pdfs/voiceOfTheDamned01.pdf",
+  previewPage: 2
 }
 ];
