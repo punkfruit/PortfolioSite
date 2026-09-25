@@ -1,15 +1,27 @@
 export const films = [
    {
-      "title":"Siren Song BTS",
-      "youtubeId":"vsBQ0SkUxsY",
-      "date":"February 2026",
-      "description":"Behind the scenes for the student production we made as a class! I was in charge of recording, and edited it together in Final Cut"
+      "title":"Abnormal Activity",
+      "youtubeId":"YhUFjmIJwt8?si=p_yRgAy1S2AImc4R",
+      "date":"June 2026",
+      "description":"Horror short I directed for the 48 hour film festival"
+   },
+   {
+      "title":"The Icecream Network",
+      "youtubeId":"K6I7ljtK8mU?si=UxZmyLoHYR2KOdBp",
+      "date":"April 2026",
+      "description":"Film Making 2 final I directed"
    },
    {
       "title":"Extra Credit",
       "youtubeId":"corOI9HU39Y",
       "date":"February 2026",
       "description":"Group Chemistry assignment i directed"
+   },
+   {
+      "title":"Chipmunk",
+      "youtubeId":"zkThRKno4xw?si=325LZfc0Cn0ozY4o",
+      "date":"September 2026",
+      "description":"Persiod Piece for Directing 1"
    },
    {
       "title":"Documentary (Neumi Doc)",
@@ -20,7 +32,7 @@ export const films = [
    {
       "title":"Short with Friends (First Assignment)",
       "youtubeId":"kaC1fsvojUY",
-      "date":"January 2025",
+      "date":"January 2026",
       "description":"Short I directed with my colleagues"
    },
    {
